@@ -1,5 +1,0 @@
-CI Dip
-Original : http://codeigniter.com/wiki/dip_into_CI/
-Discussion : http://codeigniter.com/forums/viewthread/194386/
-
-You must set the variable $codeigniter_dir inside /application/tools/rdip.php
