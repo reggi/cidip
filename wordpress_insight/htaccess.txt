@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond $1 !^(index\.php|robots\.txt|assets|wordpress|rdf|rss|rss2|atom)
+RewriteRule ^(.*)$ index.php?/$1 [L]
