@@ -27,3 +27,4 @@ These files are merged with the above edits, into one file to create the dip.
 * [Pre CI 2.0 Dip (original)](http://codeigniter.com/wiki/dip_into_CI/)
 * [Discussion](http://codeigniter.com/forums/viewthread/194386/)
 * [Video Tutorial](http://www.youtube.com/watch?v=KCmLseX1uSQ)
+* [Root CodeIgniter 2.0 Dip](https://bitbucket.org/Lepidosteus/code-igniter-tools/src)
