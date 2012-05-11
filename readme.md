@@ -1,24 +1,29 @@
-# CI Dip
+# CodeIgniter Dip
 
--   Original : http://codeigniter.com/wiki/dip_into_CI/
--   Discussion : http://codeigniter.com/forums/viewthread/194386/
--   Tutorial : http://www.youtube.com/watch?v=KCmLseX1uSQ
 
-## Files
+###Introduction
 
-Two things must be set they depend on weather or not you have codeigniter within your root directory please consult the beginning of these files respectively.
+The idea of a CodeIngiter Dip is to use CodeIgniter functionality outside of the directory, extending the reach of the framework for use in other PHP applications.
 
--   /applications/tools/rdip.php
--   /example.php
 
-## Wordpress Integration
+###Codebase
 
-I have included the folder wordpress_insight which are some of the key pieces that make http://reggi.com work using codeigniter & wordpress. This folder is not necessary for the dip to work, just reference files.
+The dip consists of two different copies of code from the framework itself.
 
-If you are using wordpress use:
+* index.php	
+	* Line ~82 | *replace with* | `$system_path = $_SERVER['DOCUMENT_ROOT'] . "/system` 
+	* Line ~99 | *replace with* | `$application_folder = $_SERVER['DOCUMENT_ROOT'] . "/application;`
+	* Line ~114 | *replace with* | `$view_folder = $_SERVER['DOCUMENT_ROOT'] . "/view";` *(CI 2.1+)*
+	* Line ~202 | *comment out* | `require_once BASEPATH.'core/CodeIgniter.php';`
+* system/core/CodeIgniter.php
+	* Line ~380 | *comment out* | `$OUT->_display();`
 
-    <?php get_template_part('header'); ?>
+These files are merged with the above edits, into one file to create the dip.
 
-rather than:
+**Note**: If you place CodeIgniter inside a directory on your server the paths to system and application (as well as view in CI 2.1+) within the *index.php* portion of the dip will need to changed to something like `$system_path = $_SERVER['DOCUMENT_ROOT'] . "/codeigniter/system`.
 
-    <?php get_header(); ?>
+###Resources
+
+* [Pre CI 2.0 Dip (original)](http://codeigniter.com/wiki/dip_into_CI/)
+* [Discussion](http://codeigniter.com/forums/viewthread/194386/)
+* [Video Tutorial](http://www.youtube.com/watch?v=KCmLseX1uSQ)
